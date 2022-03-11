@@ -1,5 +1,89 @@
-$bg: red;
+@import './fonts.scss';
 
-body {
-  background-color: $bg
+// Color Variables
+
+$tesla-black-light: #121212;
+$tesla-black: #000;
+$tesla-white: #FFF;
+$tesla-dark-blue: #040C36;
+$tesla-blue: #008DFF;
+$tesla-light-blue: #2699FB;
+$tesla-lighter-blue: #7FC4FD;
+$tesla-dark-grey: #707070;
+$tesla-dark-grey: #CCCCCC;
+$tesla-light-grey: #F0F2F7;
+
+
+html, body {
+  font-family: "Montserrat", sans-serif;
+  background-color: $tesla-white;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;  
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
+// utils
+
+.container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2.5rem;
+}
+
+// Others
+
+.header {
+  background-color: $tesla-black-light;
+  padding: 1.35rem 0;
+  text-align: center;
+}
+
+.navbar {
+  width: 100%;
+  height: 730px;
+  background-image: url("../assets/img/hero-image@2x.png");
+  background-repeat: no-repeat;
+  background-position-y: 95%;
+  background-position-x: center ;
+
+ .container {
+    width: 100%;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    padding-top: 2.5rem;
+
+    button {
+      color: $tesla-white;
+      text-transform: uppercase;
+      background-color: transparent;
+      border: none;
+      font-size: .95rem;
+      font-weight: 600;
+      margin: 0 2rem;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: .85rem;
+      letter-spacing: .75px;
+      cursor: pointer;
+
+      &:hover {
+      border-bottom: 1.5px solid $tesla-white;
+      }
+    }
+    
+    button.active {
+      border-bottom: 1.5px solid $tesla-white;
+      // border-bottom: none;
+    }
+  }
 }
