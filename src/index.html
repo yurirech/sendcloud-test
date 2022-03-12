@@ -46,7 +46,7 @@
         </figure>
       </section>
       <section class="calculator-options">
-        <section class="speed">
+        <section class="range">
           <div class="model 100d">
             <img src="assets/img/100d@2x.png" alt="Tesla Model 100D">
             <p>459<sup>KM</sup></p>
@@ -56,10 +56,50 @@
             <p>459<sup>KM</sup></p>
           </div>
         </section>
-        <section class="controls">
-          <div>
+        <section class="calculator-controls">
+          <div class="speed-control">
             <p>Speed</p>
-            <input type="number" min="100" max="">
+            <span class="speed-box controls-container">
+              100
+              <small>KMH</small>
+              <div class="control-arrows">
+                <img src="assets/icon/icon-thin-chevron-up.svg" alt="Arrow up" />
+                <hr />
+                <img src="assets/icon/icon-thin-chevron-down.svg" alt="Arrow down" />
+              </div>
+            </span>
+          </div>
+          <span class="divisor"></span>
+          <div class="temperature-control">
+            <p>Outside temperature</p>
+            <span class="temperature-box controls-container">
+              <p>20<sup>o</sup></p>
+              <div class="control-arrows">
+                <img src="assets/icon/icon-thin-chevron-up.svg" alt="Arrow up" />
+                <hr />
+                <img src="assets/icon/icon-thin-chevron-down.svg" alt="Arrow down" />
+              </div>
+            </span>
+          </div>
+          <div class="heat-button">
+            <img src="assets/icon/ac-off.svg" alt="Air conditioner off">
+            <!-- <img src="assets/icon/ac-on.svg" alt="Air conditioner on">
+            <img src="assets/icon/heat-off.svg" alt="Heat off">
+            <img src="assets/icon/heat-on.svg" alt="Heat on"> -->
+          </div>
+          <span class="divisor"></span>
+          <div class="wheels-control">
+            <p>Wheels</p>
+            <div class="flex-container">
+              <span class="wheel-19 controls-container">
+                <img src="assets/icon/icon-wheel.svg" alt="Small wheel">
+                19"
+              </span>
+              <span class="wheel-21 controls-container">
+                <img src="assets/icon/icon-wheel.svg" alt="Large wheel ">
+                21"
+              </span>
+            </div>
           </div>
         </section>
         <small>
