@@ -17,37 +17,59 @@
   <nav class="navbar">
     <div class="container">
       <div class="button-group">
-        <button id="button1" class="navbar-button active">Model S</button>
-        <button id="button2" class="navbar-button">Model X</button>
-        <button id="button3" class="navbar-button">Model 3</button>
-        <button id="button4" class="navbar-button">Roadster</button>
-        <button id="button5" class="navbar-button">Energy</button>
+        <button class="navbar-button active">Model S</button>
+        <button class="navbar-button">Model X</button>
+        <button class="navbar-button">Model 3</button>
+        <button class="navbar-button">Roadster</button>
+        <button class="navbar-button">Energy</button>
       </div>
     </div>
   </nav>
   <main>
-    <!-- <section class="hero">
-      <img src="assets/img/hero-image@2x.png" alt="Hero Image">
-    </section> -->
-    <section class="car-description">
-      <h1>Far far away, behind the word mountains…</h1>
-      <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
-        paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-      <a href="#calculator">
-        here
-      </a>
-    </section>
-    <section id="calculator" class="calculator">
-      <h3>Range per Charge</h3>
-    </section>
-    <section class="calculator-options">
-      <small>
-        The actual amount of range that you experience will vary based on your particular use conditions. Your vehicle
-        range is also dependent on other conditions, such as vehicle configuration, battery age and condition, driving
-        style and operating, environmental and climate conditions. See how some of these particular use conditions may
-        affect your range in our simulation model.
-      </small>
-    </section>
+    <article class="container">
+      <section class="car-description">
+        <h1>Far far away, behind the word mountains…</h1>
+        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
+          paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+        <a href="#calculator">
+          <span class="circle">
+            <img src="assets/icon/icon-chevron-down.svg" alt="Link to calculator">
+          </span>
+        </a>
+      </section>
+      <section id="calculator" class="calculator">
+        <h2>Range per Charge</h2>
+        <figure class="full-car-image">
+          <!-- <img src="assets/img/car-base@2x.png" alt="Tesla car sideways"> -->
+          <img class="carwheel left" src="assets/img/car-wheel@2x.png" alt="Tesla carwheel">
+          <img class="carwheel right" src="assets/img/car-wheel@2x.png" alt="Tesla carwheel">
+        </figure>
+      </section>
+      <section class="calculator-options">
+        <section class="speed">
+          <div class="model 100d">
+            <img src="assets/img/100d@2x.png" alt="Tesla Model 100D">
+            <p>459<sup>KM</sup></p>
+          </div>
+          <div class="model p100d">
+            <img src="assets/img/p100d@2x.png" alt="Tesla Model P100D">
+            <p>459<sup>KM</sup></p>
+          </div>
+        </section>
+        <section class="controls">
+          <div>
+            <p>Speed</p>
+            <input type="number" min="100" max="">
+          </div>
+        </section>
+        <small>
+          The actual amount of range that you experience will vary based on your particular use conditions. Your vehicle
+          range is also dependent on other conditions, such as vehicle configuration, battery age and condition, driving
+          style and operating, environmental and climate conditions. See how some of these particular use conditions may
+          affect your range in our simulation model.
+        </small>
+      </section>
+    </article>
   </main>
   <footer>
     <section class="contact-us">
