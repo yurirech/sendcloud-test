@@ -15,8 +15,8 @@ $tesla-light-grey: #f0f2f7;
 
 html,
 body {
-	font-family: "Montserrat", sans-serif;
 	background-color: $tesla-white;
+	font-family: "Montserrat", sans-serif;
 	margin: 0;
 }
 
@@ -36,16 +36,33 @@ h2 {
 	font-size: 2.15rem;
 }
 
+main,
+footer {
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+}
+
 // utils
 
 .container {
 	max-width: 1400px;
 	margin-left: auto;
 	margin-right: auto;
-	// padding: 0 2.5rem;
 }
 
-// Others
+.flex-container {
+	display: flex;
+}
+
+.hide {
+	display: none;
+}
+
+.disable-click {
+	pointer-events: none;
+}
+
+// Page styles
 
 .header {
 	background-color: $tesla-black-light;
@@ -54,12 +71,12 @@ h2 {
 }
 
 .navbar {
-	width: 100%;
-	height: 730px;
 	background-image: url("../assets/img/hero-image@2x.png");
 	background-repeat: no-repeat;
 	background-position-y: 95%;
 	background-position-x: center;
+	height: 730px;
+	width: 100%;
 
 	.container {
 		width: 100%;
@@ -71,19 +88,19 @@ h2 {
 		padding-top: 2.5rem;
 
 		button {
-			color: $tesla-white;
-			text-transform: uppercase;
 			background-color: transparent;
 			border: none;
+			color: $tesla-white;
 			font-size: 0.95rem;
 			font-weight: 600;
 			margin: 0 2rem;
+			text-transform: uppercase;
 			padding-left: 0;
 			padding-right: 0;
 			padding-bottom: 0.85rem;
 			letter-spacing: 0.75px;
-			cursor: pointer;
 			border-bottom: 1.5px solid transparent;
+			cursor: pointer;
 
 			&:hover {
 				border-bottom: 1.5px solid $tesla-white;
@@ -208,11 +225,18 @@ h2 {
 			}
 		}
 	}
+
+	> small {
+		font-family: Arial;
+		letter-spacing: 1.2px;
+		font-size: 0.95rem;
+	}
 }
 
 .calculator-controls {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
+	margin-bottom: 3rem;
 
 	.controls-container {
 		border: 1px solid #b9bed1;
@@ -222,7 +246,8 @@ h2 {
 		height: 5rem;
 		display: flex;
 		align-items: center;
-		justify-content: space-around;
+		justify-content: center;
+		box-sizing: border-box;
 
 		&.temperature-box,
 		&.speed-box {
@@ -230,14 +255,10 @@ h2 {
 
 			small {
 				font-size: 1.25rem;
+				margin-right: 1.25rem;
+				margin-left: 1rem;
+				margin-top: 0.5rem;
 			}
-		}
-	}
-
-	.controls-container {
-		&.wheel-19,
-		&.wheel-21 {
-			justify-content: center;
 		}
 	}
 
@@ -257,46 +278,165 @@ h2 {
 			color: #707070;
 			margin-top: 0;
 		}
+	}
 
-		.flex-container {
-			display: flex;
+	.temperature-control {
+		.temperature-box {
+			position: relative;
+
+			p {
+				margin: 0 3.2rem;
+			}
+			sup {
+				font-size: 65%;
+				margin-left: 0.25rem;
+				position: absolute;
+				top: 1rem;
+				right: 6.25rem;
+			}
 		}
 	}
 
 	.wheels-control {
-		.wheel-19 {
+		.wheel {
 			font-size: 1.25rem;
+			cursor: pointer;
 			img {
-				width: 3.375rem;
 				margin-right: 1.5rem;
 			}
 		}
 
+		.wheel-19 img {
+			width: 3.375rem;
+		}
+
 		.wheel-21 {
-			font-size: 1.25rem;
 			margin-left: 2.5rem;
-			img {
-				margin-right: 1.5rem;
-			}
+		}
+
+		.active {
+			border-width: 2px;
+			border-color: $tesla-blue;
+			transition: 0.7s;
 		}
 	}
 
 	.heat-button {
 		margin-top: 1rem;
+		cursor: pointer;
 	}
 
 	.control-arrows {
 		display: flex;
 		flex-direction: column;
-    align-items: center;
-    img {
-      max-width: 1.56rem;
-    }
+		align-items: center;
+
+		button {
+			background-color: transparent;
+			border: none;
+			padding: 0;
+			cursor: pointer;
+
+			img {
+				max-width: 1.56rem;
+			}
+		}
+
 		hr {
-			width: 2.8125rem;
-      height: 1.2px;
+			width: 2.65rem;
+			height: 1.2px;
 			background-color: #b9bed1;
-      border-style: hidden;
+			border-style: hidden;
+			margin: 0.75rem 0;
+			opacity: 0.7;
+		}
+	}
+}
+
+footer {
+	margin-top: 6rem;
+	background-color: $tesla-black;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+
+	section {
+		color: $tesla-white;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		h5 {
+			text-transform: uppercase;
+			font-weight: 600;
+			letter-spacing: -0.65px;
+			font-size: 0.8rem;
+		}
+
+		p,
+		a {
+			font-family: Arial, sans-serif;
+			margin: 0.3rem 0;
+			color: $tesla-white;
+			font-size: 0.875rem;
+		}
+	}
+
+	.contact-us,
+	.customer-service,
+	.information {
+		width: calc(80% / 4);
+	}
+
+	.subscribe {
+		h5 {
+			text-transform: none;
+			font-family: Arial, sans-serif;
+			font-size: 0.95rem;
+		}
+
+		p {
+			max-width: 16.25rem;
+			color: $tesla-lighter-blue;
+		}
+
+		input {
+			background-color: $tesla-black;
+			border: 2px solid $tesla-lighter-blue;
+			padding: 0.75rem 1rem;
+			margin-top: 1rem;
+			border-radius: 0.25rem;
+			min-width: 13.125rem;
+			margin-right: 0.75rem;
+			color: $tesla-white;
+
+			&::placeholder {
+				/* Chrome, Firefox, Opera, Safari 10.1+ */
+				color: $tesla-white;
+				opacity: 1; /* Firefox */
+			}
+
+			&:-ms-input-placeholder {
+				/* Internet Explorer 10-11 */
+				color: $tesla-white;
+			}
+
+			&::-ms-input-placeholder {
+				/* Microsoft Edge */
+				color: $tesla-white;
+			}
+		}
+
+		button {
+			background-color: $tesla-white;
+			border-radius: 0.25rem;
+			border: none;
+			color: $tesla-light-blue;
+			font-weight: 600;
+			font-size: 0.75rem;
+			padding: 0.85rem 1rem;
+			text-transform: uppercase;
+			min-width: 7.5rem;
+			letter-spacing: -0.5px;
 		}
 	}
 }

@@ -37,7 +37,7 @@
           </span>
         </a>
       </section>
-      <section id="calculator" class="calculator">
+      <section class="calculator">
         <h2>Range per Charge</h2>
         <figure class="full-car-image">
           <!-- <img src="assets/img/car-base@2x.png" alt="Tesla car sideways"> -->
@@ -49,53 +49,62 @@
         <section class="range">
           <div class="model 100d">
             <img src="assets/img/100d@2x.png" alt="Tesla Model 100D">
-            <p>459<sup>KM</sup></p>
+            <p id="100D">594<sup>KM</sup></p>
           </div>
-          <div class="model p100d">
+          <div id="calculator" class="model p100d">
             <img src="assets/img/p100d@2x.png" alt="Tesla Model P100D">
-            <p>459<sup>KM</sup></p>
+            <p id="P100D">572<sup>KM</sup></p>
           </div>
         </section>
         <section class="calculator-controls">
           <div class="speed-control">
             <p>Speed</p>
-            <span class="speed-box controls-container">
-              100
+            <div class="speed-box controls-container">
+              <p id="speed-panel">100</p>
               <small>KMH</small>
               <div class="control-arrows">
-                <img src="assets/icon/icon-thin-chevron-up.svg" alt="Arrow up" />
+                <button id="speed-arrow-up">
+                  <img src="assets/icon/icon-thin-chevron-up.svg" alt="Arrow up" />
+                </button>
                 <hr />
-                <img src="assets/icon/icon-thin-chevron-down.svg" alt="Arrow down" />
+                <button id="speed-arrow-down">
+                  <img src="assets/icon/icon-thin-chevron-down.svg" alt="Arrow down" />
+                </button>
               </div>
-            </span>
+            </div>
           </div>
           <span class="divisor"></span>
           <div class="temperature-control">
             <p>Outside temperature</p>
-            <span class="temperature-box controls-container">
-              <p>20<sup>o</sup></p>
+            <div class="temperature-box controls-container">
+              <p id="temperature-panel">20</p>
+              <sup>o</sup>
               <div class="control-arrows">
-                <img src="assets/icon/icon-thin-chevron-up.svg" alt="Arrow up" />
+                <button id="temperature-arrow-up">
+                  <img src="assets/icon/icon-thin-chevron-up.svg" alt="Arrow up" />
+                </button>
                 <hr />
-                <img src="assets/icon/icon-thin-chevron-down.svg" alt="Arrow down" />
+                <button id="temperature-arrow-down">
+                  <img src="assets/icon/icon-thin-chevron-down.svg" alt="Arrow down" />
+                </button>
               </div>
-            </span>
+            </div>
           </div>
           <div class="heat-button">
-            <img src="assets/icon/ac-off.svg" alt="Air conditioner off">
-            <!-- <img src="assets/icon/ac-on.svg" alt="Air conditioner on">
-            <img src="assets/icon/heat-off.svg" alt="Heat off">
-            <img src="assets/icon/heat-on.svg" alt="Heat on"> -->
+            <img id="ac-off"  src="assets/icon/ac-off.svg" alt="Air conditioner off">
+            <img id="ac-on" class="hide" src="assets/icon/ac-on.svg" alt="Air conditioner on">
+            <img id="heat-off" class="hide" src="assets/icon/heat-off.svg" alt="Heat off">
+            <img id="heat-on" class="hide" src="assets/icon/heat-on.svg" alt="Heat on">
           </div>
           <span class="divisor"></span>
           <div class="wheels-control">
             <p>Wheels</p>
             <div class="flex-container">
-              <span class="wheel-19 controls-container">
+              <span id="wheel19" class="wheel wheel-19 controls-container active">
                 <img src="assets/icon/icon-wheel.svg" alt="Small wheel">
                 19"
               </span>
-              <span class="wheel-21 controls-container">
+              <span id="wheel21" class="wheel wheel-21 controls-container">
                 <img src="assets/icon/icon-wheel.svg" alt="Large wheel ">
                 21"
               </span>
@@ -112,34 +121,38 @@
     </article>
   </main>
   <footer>
-    <section class="contact-us">
-      <h5>Contact us</h5>
-      <p>+44 345 678 903</p>
-      <p>adobexd@gmail.com</p>
-      <a href="https://www.google.com">Find a Store</a>
-    </section>
-    <section class="customer-service">
-      <h5>Customer Service</h5>
-      <a>Contact Us</a>
-      <a>Ordering & Payment</a>
-      <a>Shipping</a>
-      <a>Returns</a>
-      <a>FAQ</a>
-    </section>
-    <section class="information">
-      <h5>Information</h5>
-      <a>About this example</a>
-      <a>Work With Us</a>
-      <a>Privacy Policy</a>
-      <a>Terms & Conditions</a>
-      <a>Press Enquiries</a>
-    </section>
-    <section class="subscribe">
-      <h5>Subscribe to us via Email</h5>
-      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-      <input placeholder="Email Address" />
-      <button>subscribe</button>
-    </section>
+    <div class="container flex-container">
+      <section class="contact-us">
+        <h5>Contact us</h5>
+        <p>+44 345 678 903</p>
+        <p>adobexd@gmail.com</p>
+        <a href="#">Find a Store</a>
+      </section>
+      <section class="customer-service">
+        <h5>Customer Service</h5>
+        <a href="#">Contact Us</a>
+        <a href="#">Ordering & Payment</a>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQ</a>
+      </section>
+      <section class="information">
+        <h5>Information</h5>
+        <a href="#">About this example</a>
+        <a href="#">Work With Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Press Enquiries</a>
+      </section>
+      <section class="subscribe">
+        <h5>Subscribe to us via Email</h5>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+        <div>
+          <input placeholder="Email Address" />
+          <button>subscribe</button>
+        </div>
+      </section>
+    </div>
   </footer>
 </body>
 
