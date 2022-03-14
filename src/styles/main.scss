@@ -18,6 +18,7 @@ body {
 	background-color: $tesla-white;
 	font-family: "Montserrat", sans-serif;
 	margin: 0;
+	scroll-behavior: smooth;
 }
 
 a {
@@ -60,6 +61,15 @@ footer {
 
 .disable-click {
 	pointer-events: none;
+}
+
+@keyframes animateWheel {
+	0% {
+		transform: rotate(360deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
 }
 
 // Page styles
@@ -150,46 +160,33 @@ footer {
 	}
 }
 
-@keyframes animateWheel {
-	0% {
-		transform: rotate(360deg);
-	}
-	100% {
-		transform: rotate(0deg);
-	}
-}
-
 .calculator {
 	margin-top: 5rem;
 
 	h2 {
 		text-align: center;
+    color: $tesla-dark-blue;
+    font-weight: 400;
 	}
 
 	.full-car-image {
-		background-image: url("../assets/img/car-base@2x.png");
-		background-size: cover;
-		background-repeat: no-repeat;
 		position: relative;
 		margin: 0;
-		// display: inline;
-		height: 32vw;
 		max-height: 388px;
 
 		.carwheel {
 			position: absolute;
-			// width: 80%;
-			max-width: 10%;
-			animation: animateWheel 1s linear infinite;
+			max-width: 9.5%;
+			animation: animateWheel .5s linear infinite;
 
 			&.left {
 				left: 24.675%;
-				bottom: 3.5rem;
+				bottom: 14%;
 			}
 
 			&.right {
 				right: 26.5%;
-				bottom: 3.5rem;
+				bottom: 14%;
 			}
 		}
 
@@ -255,10 +252,15 @@ footer {
 
 			small {
 				font-size: 1.25rem;
-				margin-right: 1.25rem;
-				margin-left: 1rem;
+				margin-right: 1.5rem;
+				margin-left: 0.5rem;
 				margin-top: 0.5rem;
 			}
+		}
+
+		&.speed-box > p {
+			min-width: 3.5rem;
+      text-align: end;
 		}
 	}
 
@@ -286,7 +288,10 @@ footer {
 
 			p {
 				margin: 0 3.2rem;
+				min-width: 2.8125rem;
+        text-align: end;
 			}
+
 			sup {
 				font-size: 65%;
 				margin-left: 0.25rem;
@@ -334,7 +339,7 @@ footer {
 		button {
 			background-color: transparent;
 			border: none;
-			padding: 0;
+			padding: 0.675rem;
 			cursor: pointer;
 
 			img {
@@ -347,7 +352,7 @@ footer {
 			height: 1.2px;
 			background-color: #b9bed1;
 			border-style: hidden;
-			margin: 0.75rem 0;
+			margin: 0;
 			opacity: 0.7;
 		}
 	}
@@ -370,10 +375,14 @@ footer {
 			font-weight: 600;
 			letter-spacing: -0.65px;
 			font-size: 0.8rem;
+
+			a {
+				color: $tesla-white;
+			}
 		}
 
 		p,
-		a {
+		> a {
 			font-family: Arial, sans-serif;
 			margin: 0.3rem 0;
 			color: $tesla-white;
@@ -437,6 +446,184 @@ footer {
 			text-transform: uppercase;
 			min-width: 7.5rem;
 			letter-spacing: -0.5px;
+		}
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.car-description {
+		margin-top: 2rem;
+	}
+	.calculator-controls {
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.navbar {
+    background-image: url("../assets/img/hero-image-medium.png");
+		background-position-y: 13%;
+    background-position-x: 30%;
+		.button-group {
+			flex-direction: column;
+			align-items: center;
+
+			button {
+				margin: 1rem;
+			}
+		}
+	}
+
+	.car-description {
+		h1 {
+			font-size: 3.15rem;
+		}
+	}
+
+	.calculator-options {
+		.range {
+			flex-direction: column;
+		}
+
+		.model {
+			margin: 0 3.5rem;
+		}
+	}
+
+	.calculator-controls {
+		.divisor {
+			display: none;
+		}
+
+		.wheels-control {
+			margin-top: 1.5rem;
+		}
+	}
+
+	footer {
+		.flex-container {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		section {
+			p,
+			> a {
+				display: none;
+			}
+		}
+
+		.contact-us,
+		.customer-service,
+		.information {
+			width: unset;
+			margin: 0 0.25rem;
+		}
+
+		.subscribe {
+			align-items: center;
+			h5 {
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 660px) {
+	.calculator .full-car-image {
+		display: none;
+	}
+
+	.calculator-options {
+		.range {
+			margin-top: 4rem;
+		}
+
+		> small {
+			display: block;
+			text-align: center;
+			line-height: 1.5rem;
+		}
+	}
+
+	.calculator-controls {
+		flex-direction: column;
+		align-items: center;
+
+		.controls-container {
+			max-width: 216px;
+		}
+
+		.speed-control {
+			margin-bottom: 2.5rem;
+
+			> p {
+				text-align: center;
+			}
+		}
+
+		.wheels-control {
+			margin-top: 2.25rem;
+			.flex-container {
+				flex-direction: column;
+			}
+
+			.wheel-21 {
+				margin-left: 0;
+				margin-top: 0.5rem;
+			}
+
+			> p {
+				text-align: center;
+			}
+		}
+
+		.temperature-control .temperature-box {
+			margin: 1rem auto;
+
+			sup {
+				right: 5.75rem;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 463px) {
+  .navbar {
+    background-image: url("../assets/img/hero-image-small.png");
+  }
+  .car-description h1 {
+    font-size: 2.75em
+  }
+
+  .calculator h2 {
+    font-size: 2rem;
+  }
+
+	footer {
+		section {
+			h5 {
+				margin-bottom: 0;
+				margin-top: 0.5rem;
+			}
+		}
+
+		.subscribe {
+			align-items: center;
+			h5 {
+				margin-bottom: 0.25rem;
+				margin-top: 1.75rem;
+			}
+
+			div {
+				display: flex;
+				flex-direction: column;
+			}
+
+			input {
+				margin-right: 0;
+				margin-bottom: 0.5rem;
+			}
 		}
 	}
 }
