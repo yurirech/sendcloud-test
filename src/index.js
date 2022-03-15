@@ -1,9 +1,9 @@
 import "core-js";
+import "./styles/main.scss";
 import metric100D from "./data/metric-100D.json";
 import metricP100D from "./data/metric-P100D.json";
-import "./styles/main.scss";
 
-// // Variables
+// Variables
 
 let navbarButtons = document.querySelectorAll(".navbar-button");
 let acButtonOff = document.getElementById("ac-off");
@@ -209,7 +209,7 @@ function getCurrentRangePerCharge(modelMetric, teslaModel) {
 }
 
 /**
- * Runs the getCurrentRangePerCharge for each of the carm models.
+ * Runs the getCurrentRangePerCharge for each of the car models.
  */
 
 function loadCurrentRangePerCharge() {
