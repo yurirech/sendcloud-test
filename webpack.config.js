@@ -2,10 +2,11 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
+	// target: ['web', 'es5'],
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.m?js$/,
 				exclude: /node_modules/,
 				use: {
 					loader: "babel-loader",
@@ -24,10 +25,6 @@ module.exports = {
 				test: /\.scss$/,
 				use: ["style-loader", "css-loader", "sass-loader"],
 			},
-			// {
-			// 	test: /\.(png|svg|jpg|gif)$/,
-			// 	use: ["file-loader"],
-			// },
 		],
 	},
 	plugins: [

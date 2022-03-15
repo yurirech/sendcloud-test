@@ -85,6 +85,7 @@ footer {
 	background-repeat: no-repeat;
 	background-position-y: 95%;
 	background-position-x: center;
+  background-size: cover;
 	height: 730px;
 	width: 100%;
 
@@ -190,9 +191,10 @@ footer {
 			}
 		}
 
-		// img:first-of-type {
-		// 	width: 100%;
-		// }
+		img:first-of-type {
+			width: 100%;
+      height: auto;
+		}
 	}
 }
 
@@ -454,6 +456,21 @@ footer {
 	.car-description {
 		margin-top: 2rem;
 	}
+  
+ .calculator .full-car-image {
+   margin-bottom: 3rem;
+		.carwheel {
+			&.left {
+				bottom: 15%;
+			}
+
+			&.right {
+				right: 26.65%;
+				bottom: 15%;
+			}
+		}
+	}
+
 	.calculator-controls {
 		flex-wrap: wrap;
 		justify-content: space-around;

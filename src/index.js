@@ -1,8 +1,9 @@
+import "core-js";
 import metric100D from "./data/metric-100D.json";
 import metricP100D from "./data/metric-P100D.json";
 import "./styles/main.scss";
 
-// Variables
+// // Variables
 
 let navbarButtons = document.querySelectorAll(".navbar-button");
 let acButtonOff = document.getElementById("ac-off");
@@ -18,53 +19,53 @@ let temperaturePanel = document.getElementById("temperature-panel");
 let temperatureArrowUp = document.getElementById("temperature-arrow-up");
 let temperatureArrowDown = document.getElementById("temperature-arrow-down");
 
-// AddEventListener functions
+// Event listeners
 
-// Loop through all navbarButtons and ad a event listener on each one
-navbarButtons.forEach((button) => {
-	button.addEventListener("click", () => {
+// Loop through all navbarButtons and add a event listener on each one
+navbarButtons.forEach(function (button) {
+	button.addEventListener("click", function () {
 		let activeButton = document.querySelector(".navbar-button.active");
 		addAndRemoveClass(button, activeButton, "active");
 	});
 });
 
-// Make AC/Heate Button toggle between on/off when clicked
-acButtonOff.addEventListener("click", () => {
+// // Make AC/Heate Button toggle between on/off when clicked
+acButtonOff.addEventListener("click", function () {
 	addAndRemoveClass(acButtonOff, acButtonOn, "hide");
 	loadCurrentRangePerCharge();
 });
 
-acButtonOn.addEventListener("click", () => {
+acButtonOn.addEventListener("click", function () {
 	addAndRemoveClass(acButtonOn, acButtonOff, "hide");
 	loadCurrentRangePerCharge();
 });
 
-heatButtonOff.addEventListener("click", () => {
+heatButtonOff.addEventListener("click", function () {
 	addAndRemoveClass(heatButtonOff, heatButtonOn, "hide");
 	loadCurrentRangePerCharge();
 });
 
-heatButtonOn.addEventListener("click", () => {
+heatButtonOn.addEventListener("click", function () {
 	addAndRemoveClass(heatButtonOn, heatButtonOff, "hide");
 	loadCurrentRangePerCharge();
 });
 
 // Choose wheelsize 19" or 21" when clicking
-wheel19.addEventListener("click", () => {
+wheel19.addEventListener("click", function () {
 	addAndRemoveClass(wheel19, wheel21, "active");
 	loadCurrentRangePerCharge();
 });
 
-wheel21.addEventListener("click", () => {
+wheel21.addEventListener("click", function () {
 	addAndRemoveClass(wheel21, wheel19, "active");
 	loadCurrentRangePerCharge();
 });
 
 // Speed arrows controls
-speedArrowUp.addEventListener("click", () => {
+speedArrowUp.addEventListener("click", function () {
 	speedPanel.innerHTML = parseInt(speedPanel.innerHTML) + 10;
 
-  // Disable click when the max speed is reached and reactvates speedArrowDown
+	// Disable click when the max speed is reached and reactvates speedArrowDown
 	if (speedPanel.innerHTML === "140") {
 		speedArrowUp.classList.add("disable-click");
 	} else if (speedPanel.innerHTML === "80") {
@@ -74,10 +75,10 @@ speedArrowUp.addEventListener("click", () => {
 	loadCurrentRangePerCharge();
 });
 
-speedArrowDown.addEventListener("click", () => {
+speedArrowDown.addEventListener("click", function () {
 	speedPanel.innerHTML = parseInt(speedPanel.innerHTML) - 10;
 
-  // Disable click when the minimum speed is reached and reactivates speedArrowUp
+	// Disable click when the minimum speed is reached and reactivates speedArrowUp
 	if (speedPanel.innerHTML === "70") {
 		speedArrowDown.classList.add("disable-click");
 	} else if (speedPanel.innerHTML === "130") {
@@ -88,17 +89,17 @@ speedArrowDown.addEventListener("click", () => {
 });
 
 // Temperature Controller
-temperatureArrowUp.addEventListener("click", () => {
+temperatureArrowUp.addEventListener("click", function () {
 	temperaturePanel.innerHTML = parseInt(temperaturePanel.innerHTML) + 10;
 
-  // Disable click when the maximun temperature is reached and reactivates temperatureArrowDown
+	// Disable click when the maximun temperature is reached and reactivates temperatureArrowDown
 	if (temperaturePanel.innerHTML === "40") {
 		temperatureArrowUp.classList.add("disable-click");
 	} else if (temperaturePanel.innerHTML === "0") {
 		temperatureArrowDown.classList.remove("disable-click");
 	}
 
-  // Checks the current temperature and displays the right ac Button
+	// Checks the current temperature and displays the right ac Button
 	if (parseInt(temperaturePanel.innerHTML) === 20) {
 		heatButtonOff.classList.add("hide");
 		heatButtonOn.classList.add("hide");
@@ -108,17 +109,17 @@ temperatureArrowUp.addEventListener("click", () => {
 	loadCurrentRangePerCharge();
 });
 
-temperatureArrowDown.addEventListener("click", () => {
+temperatureArrowDown.addEventListener("click", function () {
 	temperaturePanel.innerHTML = parseInt(temperaturePanel.innerHTML) - 10;
 
-  // Disable click when the minimum temperature is reached and reactivates temperatureArrowUp
+	// Disable click when the minimum temperature is reached and reactivates temperatureArrowUp
 	if (temperaturePanel.innerHTML === "-10") {
 		temperatureArrowDown.classList.add("disable-click");
 	} else if (temperaturePanel.innerHTML === "30") {
 		temperatureArrowUp.classList.remove("disable-click");
 	}
 
-  // Checks the current temperature and displays the right ac Button
+	// Checks the current temperature and displays the right ac Button
 	if (parseInt(temperaturePanel.innerHTML) === 0) {
 		acButtonOff.classList.add("hide");
 		acButtonOn.classList.add("hide");
@@ -191,20 +192,20 @@ function getCurrentRangePerCharge(modelMetric, teslaModel) {
 	const currentWheel = checkCurrentWheel();
 	const acState = checkCurrentTemperatureButton();
 
-	const filteredArr = modelMetric.filter(
-		({ ac, temp, wheelsize }) =>
-			currentWheel === wheelsize &&
-			ac === acState &&
-			temp == temperaturePanel.innerHTML
-	);
+	const filteredArr = modelMetric.filter(function (metric) {
+		return (
+			currentWheel === metric.wheelsize &&
+			metric.ac === acState &&
+			metric.temp == temperaturePanel.innerHTML
+		);
+	});
 
-	const currentKilometer = filteredArr[0].hwy.filter(
-		({ kmh }) => speedPanel.innerHTML == kmh
-	);
+	const currentKilometer = filteredArr[0].hwy.filter(function (kilometer) {
+		return speedPanel.innerHTML == kilometer.kmh;
+	});
 
-	document.getElementById(
-		teslaModel
-	).innerHTML = `${currentKilometer[0].kilometers}<sup>KM</sup>`;
+	document.getElementById(teslaModel).innerHTML =
+		currentKilometer[0].kilometers + "<sup>KM</sup>";
 }
 
 /**
