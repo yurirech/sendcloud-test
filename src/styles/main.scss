@@ -81,7 +81,9 @@ footer {
 }
 
 .navbar {
-	background-image: url("../assets/img/hero-image@2x.jpg");
+	background-image: url("../assets/img/hero-image@2x.jpg"),
+		linear-gradient(180deg, #1212126c 8%, rgba(255, 255, 255, 0) 50%);
+	background-blend-mode: overlay;
 	background-repeat: no-repeat;
 	background-position-y: 95%;
 	background-position-x: center;
@@ -114,11 +116,12 @@ footer {
 			cursor: pointer;
 
 			&:hover {
-				border-bottom: 1.5px solid $tesla-white;
+				transition: all 0.35s linear;
+				border-bottom: 1.75px solid $tesla-white;
 			}
 
 			&.active {
-				border-bottom: 1.5px solid $tesla-white;
+				border-bottom: 1.75px solid $tesla-white;
 			}
 		}
 	}
@@ -452,9 +455,12 @@ footer {
 	}
 }
 
+// Media queries
+
 // IE specific styles/media queries
 
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) and (max-width: 767px) {
+@media all and (-ms-high-contrast: none),
+	(-ms-high-contrast: active) and (max-width: 767px) {
 	.car-description {
 		padding-left: 1.5rem;
 		padding-right: 1.5rem;
@@ -465,19 +471,25 @@ footer {
 		}
 	}
 
-  .calculator-options {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+	.calculator-options {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
 
-		footer {
-			.contact-us,
-			.customer-service,
-			.information {
-				width: 100%;
-        align-items: center;
-			}
+	footer {
+		.contact-us,
+		.customer-service,
+		.information {
+			width: 100%;
+			align-items: center;
 		}
+	}
+}
+
+@media only screen and (min-width: 1921px) {
+	.navbar {
+		background-position-y: 78%;
+	}
 }
 
 @media only screen and (max-width: 1200px) {
@@ -505,11 +517,11 @@ footer {
 	}
 }
 
-// Media queries
-
 @media only screen and (max-width: 767px) {
 	.navbar {
-		background-image: url("../assets/img/hero-image-medium.jpg");
+		background-image: url("../assets/img/hero-image-medium.jpg"),
+			linear-gradient(180deg, #1212126c 8%, rgba(255, 255, 255, 0) 50%);
+		background-blend-mode: overlay;
 		background-position-y: 13%;
 		background-position-x: 30%;
 		.button-group {
@@ -637,7 +649,9 @@ footer {
 
 @media only screen and (max-width: 463px) {
 	.navbar {
-		background-image: url("../assets/img/hero-image-small.jpg");
+		background-image: url("../assets/img/hero-image-small.jpg"),
+			linear-gradient(180deg, #121212b5 8%, rgba(255, 255, 255, 0) 50%);
+		background-blend-mode: overlay;
 	}
 	.car-description h1 {
 		font-size: 2.75em;

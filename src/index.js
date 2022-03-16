@@ -6,7 +6,6 @@ import metricP100D from "./data/metric-P100D.json";
 
 // Variables
 
-let navbarButtons = document.querySelectorAll(".navbar-button");
 let acButtonOff = document.getElementById("ac-off");
 let acButtonOn = document.getElementById("ac-on");
 let heatButtonOff = document.getElementById("heat-off");
@@ -19,11 +18,16 @@ let speedArrowDown = document.getElementById("speed-arrow-down");
 let temperaturePanel = document.getElementById("temperature-panel");
 let temperatureArrowUp = document.getElementById("temperature-arrow-up");
 let temperatureArrowDown = document.getElementById("temperature-arrow-down");
+// document.getElementById("navbar-buttons").classList.add('hide');
+
+// setTimeout(function(){
+//   document.getElementById('navbar-buttons').classList.remove('hide');
+//  }, 1000);
 
 // Event listeners
 
 // Loop through all navbarButtons and add a event listener on each one
-navbarButtons.forEach(function (button) {
+document.querySelectorAll(".navbar-button").forEach(function (button) {
 	button.addEventListener("click", function () {
 		let activeButton = document.querySelector(".navbar-button.active");
 		addAndRemoveClass(button, activeButton, "active");
