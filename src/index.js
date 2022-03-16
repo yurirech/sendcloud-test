@@ -1,3 +1,4 @@
+// core-js to help with IE11 compatibility issues
 import "core-js";
 import "./styles/main.scss";
 import metric100D from "./data/metric-100D.json";
@@ -65,7 +66,7 @@ wheel21.addEventListener("click", function () {
 speedArrowUp.addEventListener("click", function () {
 	speedPanel.innerHTML = parseInt(speedPanel.innerHTML) + 10;
 
-	// Disable click when the max speed is reached and reactvates speedArrowDown
+	// Disable click when the max speed is reached and reactivates speedArrowDown
 	if (speedPanel.innerHTML === "140") {
 		speedArrowUp.classList.add("disable-click");
 	} else if (speedPanel.innerHTML === "80") {
