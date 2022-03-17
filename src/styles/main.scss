@@ -85,7 +85,7 @@ footer {
 }
 
 .navbar {
-	background-image: url("../assets/img/hero-image@2x.jpg"),
+	background-image: url("../assets/img/hero-image.jpg"),
 		linear-gradient(180deg, #1212126c 8%, rgba(255, 255, 255, 0) 50%);
 	background-blend-mode: overlay;
 	background-repeat: no-repeat;
@@ -465,6 +465,9 @@ footer {
 
 @media all and (-ms-high-contrast: none),
 	(-ms-high-contrast: active) and (max-width: 767px) {
+		.navbar{
+			background-image: url("../assets/img/hero-image.jpg"),
+		}
 	.car-description {
 		padding-left: 1.5rem;
 		padding-right: 1.5rem;

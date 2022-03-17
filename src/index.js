@@ -1,6 +1,5 @@
 // core-js to help with IE11 compatibility issues
 import "core-js";
-import "./styles/main.scss";
 import metric100D from "./data/metric-100D.json";
 import metricP100D from "./data/metric-P100D.json";
 
@@ -18,11 +17,6 @@ let speedArrowDown = document.getElementById("speed-arrow-down");
 let temperaturePanel = document.getElementById("temperature-panel");
 let temperatureArrowUp = document.getElementById("temperature-arrow-up");
 let temperatureArrowDown = document.getElementById("temperature-arrow-down");
-// document.getElementById("navbar-buttons").classList.add('hide');
-
-// setTimeout(function(){
-//   document.getElementById('navbar-buttons').classList.remove('hide');
-//  }, 1000);
 
 // Event listeners
 
