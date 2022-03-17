@@ -37,6 +37,10 @@ h2 {
 	font-size: 2.15rem;
 }
 
+h4 {
+	font-size: 0.8rem;
+}
+
 main,
 footer {
 	padding-left: 2.5rem;
@@ -211,13 +215,14 @@ footer {
 	.model {
 		margin: 2rem 3.5rem;
 
-		p {
+		h3 {
 			margin-top: 1rem;
 			font-size: 2.875rem;
 			color: $tesla-blue;
 			letter-spacing: 0.25rem;
 			position: relative;
 			left: -1.25rem;
+			font-weight: 400;
 
 			sup {
 				font-size: 1.25rem;
@@ -375,11 +380,10 @@ footer {
 		flex-direction: column;
 		align-items: flex-start;
 
-		h5 {
+		h4 {
 			text-transform: uppercase;
 			font-weight: 600;
 			letter-spacing: -0.65px;
-			font-size: 0.8rem;
 
 			a {
 				color: $tesla-white;
@@ -582,7 +586,7 @@ footer {
 
 		.subscribe {
 			align-items: center;
-			h5 {
+			h4 {
 				margin-bottom: 0.5rem;
 			}
 		}
@@ -663,7 +667,7 @@ footer {
 
 	footer {
 		section {
-			h5 {
+			h4 {
 				margin-bottom: 0;
 				margin-top: 0.5rem;
 			}
@@ -671,7 +675,7 @@ footer {
 
 		.subscribe {
 			align-items: center;
-			h5 {
+			h4 {
 				margin-bottom: 0.25rem;
 				margin-top: 1.75rem;
 			}
